@@ -33,5 +33,5 @@ export const saveTask = (title, description) =>
 
 export const getTasks = () => getDocs(collection(db, 'tasks'))
 
-export const onGettasks = (callback) => onSnapshot(collection(db, 'tasks'), callback)
+export const onGetTasks = (callback) => onSnapshot(collection(db, 'tasks'), callback)
 
