@@ -33,13 +33,18 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     btnsDelete.forEach((btn) => {
       btn.addEventListener("click", ({ target: { dataset } }) => {
-        deleteTask(dataset.id);
+        // Mostrar el modal de confirmación para eliminar la tarea
+        if (confirm("¿Seguro que quieres eliminar esta tarea?")) {
+          deleteTask(dataset.id);
+        }
       });
     });
 
     const btnsEdit = taskContainer.querySelectorAll(".btn-edit");
     btnsEdit.forEach((btn) => {
       btn.addEventListener("click", async ({ target: { dataset } }) => {
+        // Mostrar el modal de confirmación para editar la tarea
+        if (confirm("¿Seguro que quieres editar esta tarea?")) {
         const doc = await getTask(dataset.id);
         const task = doc.data();
         taskForm["task-title"].value = task.title;
@@ -48,7 +53,8 @@ window.addEventListener("DOMContentLoaded", async () => {
         editStatus = true;
         id = doc.id;
 
-        taskForm["btn-task-save"].innerText = "Update";
+          taskForm["btn-task-save"].innerText = "Update";
+        }
       });
     });
   });
