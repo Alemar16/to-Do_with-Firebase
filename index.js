@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     querySnapshot.forEach((doc) => {
       const task = doc.data();
-      html += `<div class="card card-body mt-2">
+      html += `<div class="card card-body mb-3">
       <h3 class="h5">${task.title}</h3>
       <p>${task.description}</p>
       <div class="btn-group">
