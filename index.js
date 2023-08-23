@@ -1,4 +1,11 @@
-import { saveTask, getTasks, onGetTasks, deleteTask, getTask, updateTask } from "./firebase.js";
+import {
+  saveTask,
+  getTasks,
+  onGetTasks,
+  deleteTask,
+  getTask,
+  updateTask,
+} from "./firebase.js";
 
 const taskForm = document.getElementById("task-form");
 const taskContainer = document.getElementById("task-container");
@@ -12,26 +19,26 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     querySnapshot.forEach((doc) => {
       const task = doc.data();
-      html += `<div>
-      <h3>${task.title}</h3>
+      html += `<div class="card card-body mt-2">
+      <h3 class="h5">${task.title}</h3>
       <p>${task.description}</p>
-      <button class="btn-delete" data-id="${doc.id}">Delete</button>
-      <button class="btn-edit" data-id="${doc.id}">Edit</button>
-
-
+      <div class="btn-group">
+        <button class="btn btn-warning btn-sm btn-edit" data-id="${doc.id}">Edit</button>
+        <button class="btn btn-primary btn-sm btn-delete btn btn-outline-danger" data-id="${doc.id}">Delete</button>
+      </div>
     </div>`;
     });
     taskContainer.innerHTML = html;
     const btnsDelete = taskContainer.querySelectorAll(".btn-delete");
 
-    btnsDelete.forEach(btn => {
+    btnsDelete.forEach((btn) => {
       btn.addEventListener("click", ({ target: { dataset } }) => {
         deleteTask(dataset.id);
       });
     });
 
     const btnsEdit = taskContainer.querySelectorAll(".btn-edit");
-    btnsEdit.forEach(btn => {
+    btnsEdit.forEach((btn) => {
       btn.addEventListener("click", async ({ target: { dataset } }) => {
         const doc = await getTask(dataset.id);
         const task = doc.data();
@@ -40,10 +47,10 @@ window.addEventListener("DOMContentLoaded", async () => {
 
         editStatus = true;
         id = doc.id;
-        
+
         taskForm["btn-task-save"].innerText = "Update";
       });
-    })
+    });
   });
 });
 
@@ -59,7 +66,6 @@ taskForm.addEventListener("submit", (e) => {
     updateTask(id, { title: title.value, description: description.value });
 
     editStatus = false;
-    
   }
 
   taskForm.reset();
