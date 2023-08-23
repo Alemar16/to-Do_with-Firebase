@@ -1,32 +1,23 @@
 # to Do with Firabase
 
+![Capturas de la Aplicación](img\to-do-with-firebase2.jpeg)
+
 ## Descripción
-FIREBASE is basically a cloud service by Google, which means it allows you to have a database in the cloud easily. It enables you to upload files, authenticate users, and even process image files and more, such as machine learning, for example. In this case, we will be using a product called FIREBASE DATABASE.
+FIREBASE es básicamente un servicio en la nube de Google, lo que significa que te permite tener una base de datos en la nube de manera sencilla. Te permite cargar archivos, autenticar usuarios e incluso procesar archivos de imágenes y más, como el aprendizaje automático, por ejemplo. En este caso, estaremos utilizando un producto llamado FIREBASE DATABASE.
 
 
-
-## Características
+## Características de la Aplicación
 - Característica 1: Crear tareas.
 - Característica 2: Editar tareas.
 - Característica 3: Eliminar tareas.
 - Caracteristica 4: Uso de Firabase para almacenar los datos creados
 
 ## Instalación
-1. Clona el repositorio: `git clone https://github.com/tu-usuario/tu-proyecto.git`
-2. Navega hasta el directorio del proyecto: `cd tu-proyecto`
-3. Instala las dependencias: `npm install`
+1. Clona el repositorio: `git clone https://github.com/Alemar16/to-Do_with-Firebase.git`
+2. Navega hasta el directorio del proyecto: `index.html`
+
 
 ## Uso
-1. Configura el archivo de configuración `config.js`.
-2. Ejecuta la aplicación: `npm start`.
-3. Abre tu navegador y visita `http://localhost:3000` para ver la aplicación.
+1. solo debes ingresar a este enlace: https://to-do-with-firebase.vercel.app/
 
-## Contribución
-1. Haz un fork del repositorio.
-2. Crea una rama nueva: `git checkout -b mi-rama`.
-3. Realiza los cambios y realiza commit: `git commit -m "Descripción de los cambios"`.
-4. Sube los cambios a tu repositorio: `git push origin mi-rama`.
-5. Abre un pull request en GitHub.
-
-## Licencia
-Este proyecto está bajo la Licencia MIT. Consulta el archivo `LICENSE` para más información.
+![Capturas de la Aplicación](img\to-do-with-firebase.jpeg)
